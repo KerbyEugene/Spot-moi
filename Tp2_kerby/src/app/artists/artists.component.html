@@ -1,3 +1,4 @@
+
 <main class="container">
     <div class="row">
       <div class="col-3 p-3">
@@ -15,7 +16,7 @@
         <h2>Vos artistes</h2>
         <div class="row">
           <div class="col-3 p-1">
-            <div  *ngIf="artist != undefined" class="artist">
+            <div  *ngIf="artist != undefined"  class="artist">
               <h4>{{artist.name}}</h4>
               <img [src]="artist.imageUrl" alt="NOM DE L'ARTISTE" class="img-fluid">
               <a><button class="btn btn-light form-control mt-1">Concerts</button></a>

@@ -17,6 +17,7 @@ export class ArtistsComponent {
 
   artistName: string ="";
   artist ?:Artist;
+  artistList: Artist[]=[];
   
   constructor(public http : HttpClient,public artisteService : ArtistsService){}
   ngOnInit() : void{
@@ -24,10 +25,16 @@ export class ArtistsComponent {
     this.artisteService.connect();
   
   }
-
+ 
   async getArtist() : Promise<void>{
-    this.artist = await this.artisteService.getArtist(this.artistName)
-    
+    this.artistList.push(await this.artisteService.getArtist(this.artistName)) 
+  
   }
+ 
+ 
+  
 
+
+
+ 
 }

@@ -8,7 +8,7 @@
 
 body{
     background-color:black;
-    background-image: src("public/assets/images/wallpaper.png");
+    background-image: url(/assets/images/wallpaper.png);
     background-attachment: fixed;
     background-size:cover;
     background-repeat: no-repeat;
