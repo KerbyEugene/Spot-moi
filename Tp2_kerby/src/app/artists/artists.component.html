@@ -15,18 +15,18 @@
       <div class="col p-3 text-center">
         <h2>Vos artistes</h2>
         <div class="row">
-          <div class="col-3 p-1">
+          <div *ngFor="let artist of artistList" class="col-3 p-1">
             <div  *ngIf="artist != undefined"  class="artist">
               <h4>{{artist.name}}</h4>
-              <img [src]="artist.imageUrl" alt="NOM DE L'ARTISTE" class="img-fluid">
-              <a><button class="btn btn-light form-control mt-1">Concerts</button></a>
-              <a><button class="btn btn-light form-control mt-1">Albums</button></a>
+              <img [src]="artist.imageUrl" alt="{{artist.name}}" class="img-fluid">
+              <a><button [routerLink]="['/shows']"  class="btn btn-light form-control mt-1">Concerts</button></a>
+              <a><button [routerLink]="['/album']" class="btn btn-light form-control mt-1">Albums</button></a>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <button class="btn btn-light">Vider les favoris</button>
+            <button (click)="Clear()" class="btn btn-light">Vider les favoris</button>
           </div>
         </div>
       </div>

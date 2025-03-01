@@ -2,14 +2,14 @@ import { Component } from '@angular/core';
 import { ArtistsService } from '../services/artists.service';
 import { HttpClient } from '@angular/common/http';
 import { Artist } from '../models/Artist';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-artists',
   standalone: true,
-  imports: [RouterOutlet,CommonModule,FormsModule],
+  imports: [RouterOutlet,CommonModule,FormsModule,RouterModule],
   templateUrl: './artists.component.html',
   styleUrl: './artists.component.css'
 })
@@ -19,7 +19,7 @@ export class ArtistsComponent {
   artist ?:Artist;
   artistList: Artist[]=[];
   
-  constructor(public http : HttpClient,public artisteService : ArtistsService){}
+  constructor(public router : Router,public http : HttpClient,public artisteService : ArtistsService){}
   ngOnInit() : void{
 
     this.artisteService.connect();
@@ -31,10 +31,16 @@ export class ArtistsComponent {
   
   }
  
- 
+  Gotoshows(){
+    this.router.navigate(["/shows,artistn"])
+  }
   
-
-
+  Gotoalbums(){
+    this.router.navigate(["/album"])
+  }
+  Clear(){
+    this.artistList=[];
+  }
 
  
 }
