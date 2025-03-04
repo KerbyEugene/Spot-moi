@@ -1,13 +1,13 @@
 <main class="container">
     <div class="row">
-        <h2 class="text-center col py-1">Albums de {{artistName}}</h2>
+        <h2 class="text-center col py-1">Albums de l'artiste </h2>
     </div>
     <div class="row text-center mx-1">
         <div *ngFor="let album of Album" class="col-2 text-center p-1">
           <div class="artist">
             <h4>{{album.name}}</h4>
             <img [src]="album.image" [alt]="album.name" class="img-fluid">
-            <a><button class="btn btn-light form-control mt-1">Chansons</button></a>
+            <a><button [routerLink]="['/songs',album.id]" class="btn btn-light form-control mt-1">Chansons</button></a>
           </div>
         </div>
      </div>

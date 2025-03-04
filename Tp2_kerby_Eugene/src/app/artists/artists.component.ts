@@ -22,24 +22,30 @@ export class ArtistsComponent {
   
   
   constructor(public router : Router,public http : HttpClient,public artisteService : ArtistsService){}
+ 
+
   ngOnInit() : void{
 
     this.artisteService.connect();
+
+  let favlist:string  | null = localStorage.getItem("favs");
+  if (favlist!=null){
+    this.artistList=JSON.parse(favlist);
+  }
   
   }
  
   async getArtist() : Promise<void>{
     this.artistList.push(await this.artisteService.getArtist(this.artistName)) 
-  
+    localStorage.setItem("favs", JSON.stringify(this.artistList));
   }
  
   
-  Gotoalbums(){
-    this.router.navigate(["/album"])
-  }
+ 
   Clear(){
     this.artistList=[];
   }
 
+ 
  
 }

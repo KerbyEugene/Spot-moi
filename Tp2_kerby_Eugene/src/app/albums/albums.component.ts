@@ -21,9 +21,9 @@ export class AlbumsComponent implements OnInit {
   constructor(public route: ActivatedRoute, public artistService: ArtistsService) { }
   
   
-  ngOnInit() {
+  async ngOnInit() {
     this.artistId = this.route.snapshot.paramMap.get("id"); 
-    this.artistService.connect();
+   await this.artistService.connect();
    
     if (this.artistId) {
       this.getAlbums(this.artistId);  

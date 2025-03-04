@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Tp2_kerby": {
+    "Tp2_kerby_Eugene": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/tp2-kerby",
+            "outputPath": "dist/tp2-kerby-eugene",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -26,15 +26,14 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "styles": [  
+    "./node_modules/bootstrap/dist/css/bootstrap.css",
+    "src/styles.css"
+],
+"scripts": [               
+    "node_modules/jquery/dist/jquery.min.js",
+    "node_modules/bootstrap/dist/js/bootstrap.min.js"
+]
           },
           "configurations": {
             "production": {
@@ -64,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Tp2_kerby:build:production"
+              "buildTarget": "Tp2_kerby_Eugene:build:production"
             },
             "development": {
-              "buildTarget": "Tp2_kerby:build:development"
+              "buildTarget": "Tp2_kerby_Eugene:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -97,8 +96,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }
