@@ -5,11 +5,12 @@ import { Artist } from '../models/Artist';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Album } from '../models/Album';
 
 @Component({
   selector: 'app-artists',
   standalone: true,
-  imports: [RouterOutlet,CommonModule,FormsModule,RouterModule],
+  imports: [CommonModule,FormsModule,RouterModule],
   templateUrl: './artists.component.html',
   styleUrl: './artists.component.css'
 })
@@ -18,6 +19,7 @@ export class ArtistsComponent {
   artistName: string ="";
   artist ?:Artist;
   artistList: Artist[]=[];
+  
   
   constructor(public router : Router,public http : HttpClient,public artisteService : ArtistsService){}
   ngOnInit() : void{
@@ -31,9 +33,6 @@ export class ArtistsComponent {
   
   }
  
-  Gotoshows(){
-    this.router.navigate(["/shows,artistn"])
-  }
   
   Gotoalbums(){
     this.router.navigate(["/album"])
