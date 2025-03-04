@@ -31,4 +31,9 @@ export class SongsComponent {
 async getsongs(albumId:string){
 this.Song= await this.artistService.getSongs(albumId);
   }
+
+  async getVideo(){
+    
+
+  }
 }
