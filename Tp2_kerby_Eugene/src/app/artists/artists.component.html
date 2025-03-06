@@ -19,7 +19,7 @@
             <div  *ngIf="artist != undefined"  class="artist">
               <h4>{{artist.name}}</h4>
               <img [src]="artist.imageUrl" alt="{{artist.name}}" class="img-fluid">
-              <a><button [routerLink]="['/shows',artist.id]"  class="btn btn-light form-control mt-1">Concerts</button></a>
+              <a><button [routerLink]="['/shows',artist.name]"  class="btn btn-light form-control mt-1">Concerts</button></a>
               <a><button [routerLink]="['/album',artist.id]" class="btn btn-light form-control mt-1">Albums</button></a>
             </div>
           </div>

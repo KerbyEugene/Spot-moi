@@ -6,6 +6,7 @@ import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Album } from '../models/Album';
+import { YoutubeService } from '../services/youtube.service';
 
 @Component({
   selector: 'app-artists',
@@ -21,7 +22,7 @@ export class ArtistsComponent {
   artistList: Artist[]=[];
   
   
-  constructor(public router : Router,public http : HttpClient,public artisteService : ArtistsService){}
+  constructor(public router : Router,public http : HttpClient,public artisteService : ArtistsService,public youtubeService:YoutubeService){}
  
 
   ngOnInit() : void{
@@ -46,6 +47,8 @@ export class ArtistsComponent {
     this.artistList=[];
   }
 
- 
+ goShow(){
+  this.youtubeService.getshows(this.artistName)
+ }
  
 }

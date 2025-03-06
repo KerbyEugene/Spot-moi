@@ -6,10 +6,15 @@ import { lastValueFrom } from 'rxjs';
   providedIn: 'root'
 })
 export class YoutubeService {
-  songName:string=""
-  artistName:string=""
-  cle:string="AIzaSyB6E2LuMeGqfoZFct0mVPxJZD4RCl-Wgfc"
-  cleConcert:string=""
+  songName:string="";
+  artistName:string="";
+  cle:string="AIzaSyB6E2LuMeGqfoZFct0mVPxJZD4RCl-Wgfc";
+  cleConcert:string="2b32475766802ac01eefda45e9e42ea0";
+  city:string="";
+  country:string="";
+  latitude:string="";
+  longitude:string="";
+ 
   constructor(public http : HttpClient){}
   
    async getvideo(){
@@ -17,8 +22,12 @@ export class YoutubeService {
     return x.items[0].id.videoId
   }
 
-  async getshows(){
-    let x= await lastValueFrom(this.http.get<any>(`https://rest.bandsintown.com/artists/${this.artistName}/events?app_id=${this.cleConcert}`))
+  async getshows(artistName:string){
+    let x= await lastValueFrom(this.http.get<any>(`https://rest.bandsintown.com/artists/${artistName}/events?app_id=${this.cleConcert}`))
     console.log(x);
+    this.city =x[0].venue.city
+    this.country=x[0].venue.country
+    this.latitude=x[0].venue.latitude
+    this.longitude=x[0].venue.longitude
   }
 }
