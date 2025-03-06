@@ -11,6 +11,7 @@ export class YoutubeService {
   constructor(public http : HttpClient){}
   
    async getvideo(){
-    let x= await lastValueFrom(this.http.get<any>(`type=video&part=id&maxResults=1&key=${this.cle}&q=${this.songName}`)) 
+    let x= await lastValueFrom(this.http.get<any>(`https://www.googleapis.com/youtube/v3/search?type=video&part=id&maxResults=1&key=${this.cle}&q=${this.songName}`)) 
+    return x.items[0].id.videoId
   }
 }
