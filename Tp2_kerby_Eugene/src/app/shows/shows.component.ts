@@ -5,6 +5,7 @@ import { ArtistsService } from '../services/artists.service';
 import { YoutubeService } from '../services/youtube.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Shows } from '../models/Shows';
 
 @Component({
   selector: 'app-shows',
@@ -15,6 +16,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ShowsComponent {
   artisteName: string | null= null;
+  
 
 constructor(public route: ActivatedRoute, public artistService: ArtistsService,public youtubeService: YoutubeService,){}
 

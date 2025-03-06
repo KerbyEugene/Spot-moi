@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
+import { Shows } from '../models/Shows';
 
 @Injectable({
   providedIn: 'root'
@@ -25,9 +26,11 @@ export class YoutubeService {
   async getshows(artistName:string){
     let x= await lastValueFrom(this.http.get<any>(`https://rest.bandsintown.com/artists/${artistName}/events?app_id=${this.cleConcert}`))
     console.log(x);
-    this.city =x[0].venue.city
-    this.country=x[0].venue.country
-    this.latitude=x[0].venue.latitude
-    this.longitude=x[0].venue.longitude
+    
+     let shows : Shows[]=[];
+     for(let i = 0; i < x.length; i++){
+      shows.push(new Shows(x[i].venue.country,x[i].venue.city,x[i].datetime,x[i].venue.longitude,x[i].venue.latitude));
+    }
+     return shows
   }
 }
