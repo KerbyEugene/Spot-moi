@@ -3,8 +3,8 @@ export class Shows{
         public pays:string,
         public ville:string,
         public date:string,
-        public longitude:string,
-        public latitude:string
+        public latitude:number,
+        public longitude:number
 
 
     ){}

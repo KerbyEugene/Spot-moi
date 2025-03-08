@@ -1,6 +1,6 @@
 <main class="container">
     <div class="row">
-        <h2 class="text-center col py-1">Concerts de NOM_ARTISTE</h2>
+        <h2 class="text-center col py-1">Concerts de {{ artisteName }}</h2>
     </div>
 
     <div class="row my-2 text-center justify-content-center">
@@ -10,18 +10,20 @@
   [zoom]="zoom"
   width="700"
   height="300"
-></google-map>
+><map-marker *ngFor="let m of markers" [position]="m">
+</map-marker></google-map>
+
       </div>
       
     </div>
 
 
     <div class="row mx-1">
-      <div *ngFor="let shows of shows" class="col-3 p-1">
+      <div *ngFor="let show of shows" class="col-3 p-1">
         <div class="artist">
-          <h4>DATE ET HEURE</h4>
-          <div></div>
-          <div>VILLE</div>
+          <h4>{{ show.date | date: 'MMM d, y HH:mm' }}</h4>
+          <div>{{ show.pays }}</div>
+          <div>{{ show.ville }}</div>
         </div>
       </div>
     </div>

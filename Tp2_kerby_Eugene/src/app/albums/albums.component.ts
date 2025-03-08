@@ -23,6 +23,7 @@ export class AlbumsComponent implements OnInit {
   
   async ngOnInit() {
     this.artistId = this.route.snapshot.paramMap.get("id"); 
+    this.artistName=this.route.snapshot.paramMap.get("artistName");
    await this.artistService.connect();
    
     if (this.artistId) {

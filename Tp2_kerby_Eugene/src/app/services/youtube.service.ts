@@ -29,7 +29,10 @@ export class YoutubeService {
     
      let shows : Shows[]=[];
      for(let i = 0; i < x.length; i++){
-      shows.push(new Shows(x[i].venue.country,x[i].venue.city,x[i].datetime,x[i].venue.longitude,x[i].venue.latitude));
+      let latitude = x[i].venue.latitude;
+      let longitude = x[i].venue.longitude;
+    
+      shows.push(new Shows(x[i].venue.country,x[i].venue.city,x[i].datetime,parseFloat(latitude),parseFloat(longitude) ));
     }
      return shows
   }

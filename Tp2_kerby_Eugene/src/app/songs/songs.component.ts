@@ -21,6 +21,7 @@ export class SongsComponent {
   albumName: string = '';
   videoUrl: string = '';
   safeUrl: SafeResourceUrl | null = null;
+  artistName: string | null= null;
 
   constructor(public route: ActivatedRoute, public artistService: ArtistsService,public youtubeService: YoutubeService, private sanitizer: DomSanitizer) { }
   
@@ -28,6 +29,7 @@ export class SongsComponent {
  async ngOnInit() {
     this.albumid = this.route.snapshot.paramMap.get("id");
     this.albumName = this.route.snapshot.paramMap.get("name") || ''; 
+    this.artistName=this.route.snapshot.paramMap.get("artistName");
    await this.artistService.connect();
     if(this.albumid)
     {
