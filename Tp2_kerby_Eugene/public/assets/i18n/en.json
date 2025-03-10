@@ -1,0 +1,15 @@
+{
+    "composantartitist": {
+        "title1": "Songs by {{artist}}",
+        "title2": "Albums by {{artist}}",
+        "title3": "Concerts by {{artist}}",
+        "title4": "Your artists",
+        "title5": "Add an artist",
+        "title6": "Search",
+        "title7": "Clear favorites",
+        "title8": "Your artists",
+        "title9": "Spot me",
+        "title10":"Songs",
+        "title11":"Listen"
+    }
+}

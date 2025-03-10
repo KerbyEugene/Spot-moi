@@ -5,11 +5,12 @@ import { Artist } from '../models/Artist';
 import { ArtistsService } from '../services/artists.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-albums',
   standalone: true,
-  imports: [CommonModule,FormsModule,RouterModule],
+  imports: [CommonModule,FormsModule,RouterModule,TranslateModule],
   templateUrl: './albums.component.html',
   styleUrl: './albums.component.css'
 })
@@ -18,7 +19,7 @@ export class AlbumsComponent implements OnInit {
   artistId :string | null= null;
   Album: Album[] = [];
   artistName:string | null= null;
-  constructor(public route: ActivatedRoute, public artistService: ArtistsService) { }
+  constructor(public route: ActivatedRoute, public artistService: ArtistsService,) { }
   
   
   async ngOnInit() {

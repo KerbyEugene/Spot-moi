@@ -1,0 +1,16 @@
+{
+    "composantartitist":{
+        "title1":"Chansons de {{artist}}",
+        "title2":"Albums de {{artist}}",
+        "title3":"Concerts de {{artist}}" ,
+        "title4":"Vos artistes",
+        "title5":"Ajouter un artiste",
+        "title6":"Rechercher",
+        "title7":"Vider favoris",
+        "title8":"Vos artistes",
+        "title9":"Spot-moi",
+        "title10":"Chansons",
+        "title11":"Écouter"
+        
+    }
+}

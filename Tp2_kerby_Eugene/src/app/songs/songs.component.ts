@@ -6,11 +6,12 @@ import { ArtistsService } from '../services/artists.service';
 import { Song } from '../models/Song';
 import { YoutubeService } from '../services/youtube.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-songs',
   standalone: true,
-  imports: [CommonModule,FormsModule,RouterModule],
+  imports: [CommonModule,FormsModule,RouterModule,TranslateModule],
   templateUrl: './songs.component.html',
   styleUrl: './songs.component.css'
 })

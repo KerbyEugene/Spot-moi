@@ -7,11 +7,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Album } from '../models/Album';
 import { YoutubeService } from '../services/youtube.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-artists',
   standalone: true,
-  imports: [CommonModule,FormsModule,RouterModule],
+  imports: [CommonModule,FormsModule,RouterModule,TranslateModule],
   templateUrl: './artists.component.html',
   styleUrl: './artists.component.css'
 })
@@ -22,7 +23,7 @@ export class ArtistsComponent {
   artistList: Artist[]=[];
   
   
-  constructor(public router : Router,public http : HttpClient,public artisteService : ArtistsService,public youtubeService:YoutubeService){}
+  constructor(public router : Router,public http : HttpClient,public artisteService : ArtistsService,public youtubeService:YoutubeService,){}
  
 
   ngOnInit() : void{

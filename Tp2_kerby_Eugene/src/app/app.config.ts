@@ -12,13 +12,13 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideHttpClient(), // Correction : Ajout de la virgule ici
+    provideHttpClient(), 
     importProvidersFrom(
       TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,
           useFactory: HttpLoaderFactory,
-          deps: [HttpClient] // HttpClient est bien défini maintenant
+          deps: [HttpClient] 
         }
       })
     )

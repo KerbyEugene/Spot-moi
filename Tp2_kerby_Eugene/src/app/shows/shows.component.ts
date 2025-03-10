@@ -6,11 +6,12 @@ import { YoutubeService } from '../services/youtube.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, UpperCasePipe } from '@angular/common';
 import { Shows } from '../models/Shows';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-shows',
   standalone: true,
-  imports: [GoogleMapsModule,CommonModule,FormsModule,RouterModule,],
+  imports: [GoogleMapsModule,CommonModule,FormsModule,RouterModule,TranslateModule],
   templateUrl: './shows.component.html',
   styleUrl: './shows.component.css'
   
