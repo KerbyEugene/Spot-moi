@@ -5,7 +5,5 @@ export class Shows{
         public date:string,
         public latitude:number,
         public longitude:number
-
-
     ){}
 }
